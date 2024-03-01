@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Laranja extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -39,26 +41,43 @@ class Laranja extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                    width: 400.0,
-                    height: 300.0,
-                    decoration: const BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.vertical(
-                        bottom: Radius.circular(40),
-                      ),
-                    )),
-                Positioned(
-                  right: 70,
-                  top: 10,
-                  bottom: 0,
-                  child: Image.asset(
-                    "assets/full.png",
-                    height: 450,
-                    width: 250,
+                  width: 400.0,
+                  height: 300.0,
+                  decoration: const BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.vertical(
+                      bottom: Radius.circular(40),
+                    ),
                   ),
                 ),
+                Container(
+                  child: Positioned(
+                    right: 73,
+                    top: 0,
+                    bottom: 15,
+                    child: Image.asset(
+                      "assets/full.png",
+                      height: 500,
+                      width: 240,
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.bottomCenter,
+                  padding: const EdgeInsets.fromLTRB(160, 275, 150, 0),
+                  child: Positioned(
+                    top: 1,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: Text(
+                        '- 1 +',
+                        style: TextStyle(fontSize: 17),
+                      ),
+                    ),
+                  ),
+                )
               ],
-            )
+            ),
           ],
         ),
       ),
