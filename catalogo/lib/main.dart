@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/laranja.dart';
-import 'pages/home.dart';
+import 'app/pages/laranja.dart';
+import 'app/pages/home.dart';
 
 void main() => runApp(Principal());
 
