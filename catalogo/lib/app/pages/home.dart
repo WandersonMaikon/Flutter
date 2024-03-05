@@ -87,7 +87,7 @@ class Home extends StatelessWidget {
                         right: 5,
                         bottom: 10,
                         child: Image.asset(
-                          "assets/juice1.png",
+                          "assets/image/juice1.png",
                           height: 350,
                           width: 130,
                         ),
@@ -160,7 +160,7 @@ class Home extends StatelessWidget {
                         right: 5,
                         bottom: 10,
                         child: Image.asset(
-                          "assets/juice2.png",
+                          "assets/image/juice2.png",
                           height: 350,
                           width: 130,
                         ),
@@ -233,7 +233,7 @@ class Home extends StatelessWidget {
                         right: 5,
                         bottom: 10,
                         child: Image.asset(
-                          "assets/juice3.png",
+                          "assets/image/juice3.png",
                           height: 350,
                           width: 130,
                         ),

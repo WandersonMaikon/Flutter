@@ -57,7 +57,7 @@ class Laranja extends StatelessWidget {
                         top: 0,
                         bottom: 15,
                         child: Image.asset(
-                          "assets/full.png",
+                          "assets/image/full.png",
                           height: 500,
                           width: 240,
                         ),
@@ -153,7 +153,7 @@ class Laranja extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/pessoa1.png',
+                              'assets/image/pessoa1.png',
                               width: 60,
                               height: 60,
                               fit: BoxFit.cover,
@@ -163,7 +163,7 @@ class Laranja extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/pessoa2.png',
+                              'assets/image/pessoa2.png',
                               width: 60,
                               height: 60,
                               fit: BoxFit.cover,
@@ -173,7 +173,7 @@ class Laranja extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/pessoa3.jpg',
+                              'assets/image/pessoa3.jpg',
                               width: 60,
                               height: 60,
                               fit: BoxFit.cover,
@@ -183,7 +183,7 @@ class Laranja extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/pessoa4.jpg',
+                              'assets/image/pessoa4.jpg',
                               width: 60,
                               height: 60,
                               fit: BoxFit.cover,
@@ -193,7 +193,7 @@ class Laranja extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10.0),
                             child: Image.asset(
-                              'assets/adicionar.png',
+                              'assets/image/adicionar.png',
                               width: 60,
                               height: 60,
                               fit: BoxFit.cover,
@@ -203,39 +203,40 @@ class Laranja extends StatelessWidget {
                       ),
                     ),
                     Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Container(
-                          padding: const EdgeInsets.fromLTRB(20, 325, 20, 50),
-                          child: Row(
-                            children: [
-                              const Text(
-                                "R\$ 25,99",
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        padding: const EdgeInsets.fromLTRB(20, 325, 20, 50),
+                        child: Row(
+                          children: [
+                            const Text(
+                              "R\$ 25,99",
+                              style: TextStyle(
+                                fontFamily: "ExtraBold",
+                                fontSize: 35,
+                              ),
+                            ),
+                            const Spacer(),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                backgroundColor: Colors.amber,
+                              ),
+                              child: const Text(
+                                'Comprar agora',
                                 style: TextStyle(
-                                  fontFamily: "ExtraBold",
-                                  fontSize: 35,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
                                 ),
                               ),
-                              const Spacer(),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  backgroundColor: Colors.amber,
-                                ),
-                                child: const Text(
-                                  'Comprar agora',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        )),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],
