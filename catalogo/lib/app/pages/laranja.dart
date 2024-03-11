@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import '../widgets/botao.dart';
 
 class Laranja extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -26,12 +28,10 @@ class Laranja extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(
-                Icons.badge_outlined, // Exemplo de ícone de configurações
+                Icons.badge_outlined,
                 color: Colors.white,
               ),
-              onPressed: () {
-                // Adicione a ação desejada aqui
-              },
+              onPressed: () {},
             ),
           ],
         ),
@@ -51,16 +51,19 @@ class Laranja extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      child: Positioned(
-                        right: 73,
-                        top: 0,
-                        bottom: 15,
-                        child: Image.asset(
-                          "assets/image/full.png",
-                          height: 500,
-                          width: 240,
-                        ),
+                    Positioned(
+                      right: 140,
+                      top: 270,
+                      child: QuatidadeSuco(),
+                    ),
+                    Positioned(
+                      right: 73,
+                      top: 0,
+                      bottom: 15,
+                      child: Image.asset(
+                        "assets/image/full.png",
+                        height: 500,
+                        width: 240,
                       ),
                     ),
                   ],
