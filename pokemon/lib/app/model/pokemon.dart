@@ -1,19 +1,20 @@
 import 'package:dio/dio.dart';
 
-class Pokemon {
+class PokemonServer {
   final Dio _dio = Dio();
-  final String baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  final String baseUrl =
+      'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
 
-  Pokemon();
+  PokemonServer();
 
   Future<List<Map<String, dynamic>>> fetchPokemon() async {
     try {
       final response = await _dio.get(baseUrl);
-      List<dynamic> results = response.data['results'];
+      List<dynamic> results = response.data['pokemon'];
 
       List<Map<String, dynamic>> pokemonDetails = await Future.wait(
           results.map((pokemon) => fetchPokemonDetails(pokemon['url'])));
-
+      print(results);
       return pokemonDetails;
     } catch (e) {
       throw Exception('Erro ao buscar pokemons');

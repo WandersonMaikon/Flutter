@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'app/pages/home.dart';
-import 'app/model/server.dart';
+import 'app/pages/tutorial.dart';
+import 'app/pages/inicio.dart';
+import 'app/pages/login.dart';
+import 'app/model/pokemon.dart';
 
 void main() {
   runApp(Principal());
@@ -12,8 +15,11 @@ class Principal extends StatelessWidget {
       routes: {
         '/principal': (context) => Principal(),
         '/home': (context) => Home(),
+        '/inicio': (context) => Inicio(),
+        '/tutorial': (context) => Tutorial(),
+        '/login': (context) => Login(),
       },
-      initialRoute: '/home',
+      initialRoute: '/inicio',
     );
   }
 }

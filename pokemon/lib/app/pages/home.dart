@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'dart:async';
 import '../model/server.dart'; // Garanta que este caminho esteja correto para acessar a classe Pokemon
 
@@ -14,7 +13,6 @@ class _Home extends State<Home> {
   @override
   void initState() {
     super.initState();
-    // Inicia a busca pelos detalhes dos pokémons, incluindo a URL da imagem
     _pokemonList = Pokemon().fetchPokemon();
   }
 
@@ -22,7 +20,6 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de pokémons'),
         backgroundColor: Colors.amber,
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
@@ -41,12 +38,11 @@ class _Home extends State<Home> {
             itemCount: data.length,
             itemBuilder: (context, index) {
               var pokemon = data[index];
-              return Stack(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    decoration: BoxDecoration(),
-                    child: Row(
+              return Card(
+                child: Stack(
+                  children: [
+                    Positioned(
+                        child: Row(
                       children: [
                         Text(
                           pokemon['name'],
@@ -57,9 +53,9 @@ class _Home extends State<Home> {
                         Spacer(),
                         Image.network(pokemon['imageUrl']),
                       ],
-                    ),
-                  )
-                ],
+                    ))
+                  ],
+                ),
               );
             },
           );
