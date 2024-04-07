@@ -13,6 +13,11 @@ void main() {
 class Principal extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          textTheme: TextTheme(
+              bodyMedium: TextStyle(
+        fontFamily: 'poppins',
+      ))),
       routes: {
         '/principal': (context) => Principal(),
         '/home': (context) => Home(),
