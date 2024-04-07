@@ -1,36 +1,23 @@
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class PokemonServer {
-  final Dio _dio = Dio();
-  final String baseUrl =
-      'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
+class PokemonService {
+  Future<List<dynamic>> fetchPokemon([int limit = 10]) async {
+    final response = await http.get(Uri.parse(
+        'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json'));
 
-  PokemonServer();
+    if (response.statusCode == 200) {
+      var decodedJson = jsonDecode(response.body);
+      List<dynamic> pokemons = decodedJson['pokemon'];
 
-  Future<List<Map<String, dynamic>>> fetchPokemon() async {
-    try {
-      final response = await _dio.get(baseUrl);
-      List<dynamic> results = response.data['pokemon'];
-
-      List<Map<String, dynamic>> pokemonDetails = await Future.wait(
-          results.map((pokemon) => fetchPokemonDetails(pokemon['url'])));
-      print(results);
-      return pokemonDetails;
-    } catch (e) {
-      throw Exception('Erro ao buscar pokemons');
-    }
-  }
-
-  // Novo método para buscar detalhes de cada pokemon
-  Future<Map<String, dynamic>> fetchPokemonDetails(String url) async {
-    try {
-      final response = await _dio.get(url);
-      return {
-        'name': response.data['name'],
-        'imageUrl': response.data['sprites']['front_default'],
-      };
-    } catch (e) {
-      throw Exception('Erro ao buscar detalhes do pokemon');
+      // Aplicar o limite
+      if (pokemons.length > limit) {
+        return pokemons.sublist(0, limit);
+      } else {
+        return pokemons;
+      }
+    } else {
+      throw Exception('Failed to load Pokemon');
     }
   }
 }

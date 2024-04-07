@@ -8,7 +8,7 @@ class Login extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(context, '/pokemon');
             },
             child: const Row(
               children: [

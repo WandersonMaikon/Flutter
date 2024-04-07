@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../model/server.dart'; // Garanta que este caminho esteja correto para acessar a classe Pokemon
+import '../model/server.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -46,7 +46,7 @@ class _Home extends State<Home> {
                       children: [
                         Text(
                           pokemon['name'],
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                           ),
                         ),

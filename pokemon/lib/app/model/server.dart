@@ -20,7 +20,6 @@ class Pokemon {
     }
   }
 
-  // Novo método para buscar detalhes de cada pokemon
   Future<Map<String, dynamic>> fetchPokemonDetails(String url) async {
     try {
       final response = await _dio.get(url);
