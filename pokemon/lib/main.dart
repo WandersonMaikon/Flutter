@@ -1,31 +1,20 @@
 import 'package:flutter/material.dart';
-import 'app/pages/home.dart';
-import 'app/pages/tutorial.dart';
-import 'app/pages/inicio.dart';
-import 'app/pages/login.dart';
-import 'app/model/pokemon.dart';
-import 'app/pages/pokemonpage.dart';
+import 'app/routes/app_routes.dart';
 
 void main() {
   runApp(Principal());
 }
 
 class Principal extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
               bodyMedium: TextStyle(
         fontFamily: 'poppins',
       ))),
-      routes: {
-        '/principal': (context) => Principal(),
-        '/home': (context) => Home(),
-        '/inicio': (context) => Inicio(),
-        '/tutorial': (context) => Tutorial(),
-        '/login': (context) => Login(),
-        '/pokemon': (context) => PokemonListPage()
-      },
+      routes: AppRoutes.define(),
       initialRoute: '/inicio',
     );
   }

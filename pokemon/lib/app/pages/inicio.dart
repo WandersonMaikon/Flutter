@@ -19,7 +19,7 @@ class _Inicio extends State<Inicio> with SingleTickerProviderStateMixin {
       vsync: this,
     );
 
-    _animation = Tween(begin: 0.0, end: 6.0).animate(
+    _animation = Tween(begin: 0.0, end: 20.0).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: const Interval(0.6, 1.0, curve: Curves.easeInOut),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../model/server.dart';
+import '../../model/server.dart';
 
 class Home extends StatefulWidget {
   @override
