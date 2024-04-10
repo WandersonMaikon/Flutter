@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'app/routes/app_routes.dart';
 
 void main() {
@@ -8,6 +9,12 @@ void main() {
 class Principal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors
+          .transparent, // Define a cor da barra de status para transparente
+      statusBarIconBrightness: Brightness
+          .dark, // Ícones da barra de status claros para fundos escuros
+    ));
     return MaterialApp(
       theme: ThemeData(
         textTheme: const TextTheme(
@@ -17,7 +24,7 @@ class Principal extends StatelessWidget {
         ),
       ),
       routes: AppRoutes.define(),
-      initialRoute: '/inicio',
+      initialRoute: '/bulbasaur',
     );
   }
 }

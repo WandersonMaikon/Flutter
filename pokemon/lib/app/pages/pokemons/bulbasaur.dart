@@ -23,6 +23,7 @@ class _BulbasaurState extends State<Bulbasaur> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Stack(
         children: [
@@ -41,27 +42,15 @@ class _BulbasaurState extends State<Bulbasaur> {
                     var botaoimagem;
                     return Stack(
                       children: [
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: ClipRRect(
-                            child: Container(
-                              decoration:
-                                  const BoxDecoration(color: AppColors.Grass),
-                              height: 80,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 32,
-                                vertical: 8,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 200.0,
-                          decoration: const BoxDecoration(
-                            color: AppColors.Grass,
-                            borderRadius: BorderRadius.vertical(
-                              bottom: Radius.circular(250),
-                            ),
+                        Positioned(
+                          top: -150,
+                          left: -20,
+                          right: -20,
+                          child: Container(
+                            alignment: Alignment.topCenter,
+                            width: 900,
+                            child: Image.asset(
+                                'assets/images/fundoperfil/bulbasaur.png'),
                           ),
                         ),
                         Container(

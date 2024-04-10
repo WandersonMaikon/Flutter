@@ -65,7 +65,8 @@ flutter:
     - assets/images/sprits/
     - assets/images/botoes/
     - assets/images/bottomnavi/
-    - assets/gifs/
+    - assets/images/fundoperfil/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
