@@ -10,6 +10,8 @@ class AppColors {
   static const Color Water = Color(0xff5090D6);
   static const Color Poison = Color(0xffB567CE);
   static const Color Flying = Color(0xff89AAE3);
+  static const Color Psychic = Color(0xffFA7179);
+  static const Color Ice = Color(0xff73CEC0);
 
   static Color getButtonColor(String color) {
     List colors = [
@@ -32,6 +34,14 @@ class AppColors {
       {
         "key": "Poison",
         "color": Poison,
+      },
+      {
+        "key": "Ice",
+        "color": Ice,
+      },
+      {
+        "key": "Psychic",
+        "color": Psychic,
       }
     ];
 

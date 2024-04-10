@@ -7,14 +7,15 @@ void main() {
 }
 
 class Principal extends StatelessWidget {
+  const Principal({super.key});
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors
-          .transparent, // Define a cor da barra de status para transparente
-      statusBarIconBrightness: Brightness
-          .dark, // Ícones da barra de status claros para fundos escuros
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    );
     return MaterialApp(
       theme: ThemeData(
         textTheme: const TextTheme(
@@ -24,7 +25,7 @@ class Principal extends StatelessWidget {
         ),
       ),
       routes: AppRoutes.define(),
-      initialRoute: '/bulbasaur',
+      initialRoute: '/inicio',
     );
   }
 }

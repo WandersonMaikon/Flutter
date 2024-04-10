@@ -56,6 +56,14 @@ class _BulbasaurState extends State<Bulbasaur> {
                           ),
                         ),
                         Container(
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: Icon(Icons.arrow_back),
+                          ),
+                        ),
+                        Container(
                           padding: const EdgeInsets.fromLTRB(110, 0, 0, 0),
                           child: const Image(
                             image: AssetImage(
@@ -172,38 +180,227 @@ class _BulbasaurState extends State<Bulbasaur> {
                                 ),
                               ),
                               Container(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 0, 10, 20),
-                                width: 170,
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     const Row(
                                       children: [
                                         Iconify(Emojione.weight_outline),
-                                        Text('Peso')
+                                        Text('Peso'),
+                                        SizedBox(width: 120),
+                                        Iconify(Emojione.height_outlined),
+                                        Text('Altura')
                                       ],
                                     ),
-                                    Container(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          50, 0, 50, 0),
-                                      decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey),
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            0, 10, 0, 10),
-                                        child: Text(
-                                          bulbasaur['weight'],
-                                          style: const TextStyle(fontSize: 18),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              50, 0, 50, 0),
+                                          decoration: BoxDecoration(
+                                            border:
+                                                Border.all(color: Colors.grey),
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.fromLTRB(
+                                                0, 10, 0, 10),
+                                            child: Text(
+                                              bulbasaur['weight'],
+                                              style:
+                                                  const TextStyle(fontSize: 18),
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
+                                        const SizedBox(width: 20),
+                                        Container(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              50, 0, 50, 0),
+                                          decoration: BoxDecoration(
+                                            border:
+                                                Border.all(color: Colors.grey),
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.fromLTRB(
+                                                0, 10, 0, 10),
+                                            child: Text(
+                                              bulbasaur['height'],
+                                              style:
+                                                  const TextStyle(fontSize: 18),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
                                   ],
                                 ),
-                              )
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Row(
+                                      children: [
+                                        Iconify(Emojione.category),
+                                        Text('Categoria'),
+                                        SizedBox(width: 80),
+                                        Iconify(Emojione.pokeball),
+                                        Text('Habilidade')
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              50, 0, 50, 0),
+                                          decoration: BoxDecoration(
+                                            border:
+                                                Border.all(color: Colors.grey),
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                          ),
+                                          child: const Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                0, 10, 10, 10),
+                                            child: Text(
+                                              'Seed',
+                                              style: TextStyle(fontSize: 18),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(width: 20),
+                                        Container(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              33, 0, 33, 0),
+                                          decoration: BoxDecoration(
+                                            border:
+                                                Border.all(color: Colors.grey),
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                          ),
+                                          child: const Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                0, 10, 0, 10),
+                                            child: Text(
+                                              'Overgrow',
+                                              style: TextStyle(fontSize: 18),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(7, 20, 0, 0),
+                                child: const Image(
+                                  image: AssetImage(
+                                    'assets/images/genero/genero_1.png',
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 15, 0, 15),
+                                child: const Text(
+                                  'Fraquezas',
+                                  style: TextStyle(fontSize: 23),
+                                ),
+                              ),
+                              Wrap(
+                                spacing: 8.0,
+                                runSpacing: 0.0,
+                                children: <Widget>[
+                                  ...List<Widget>.generate(
+                                    bulbasaur['weaknesses'].length,
+                                    (int index) {
+                                      Color buttonColor;
+                                      var botaoimagem;
+                                      switch (bulbasaur['weaknesses'][index]) {
+                                        case 'Grass':
+                                          buttonColor = AppColors.Grass;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.grassBotao();
+                                          break;
+                                        case 'Fire':
+                                          buttonColor = AppColors.Fire;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.fireBotao();
+                                          break;
+                                        case 'Water':
+                                          buttonColor = AppColors.Water;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.waterBotao();
+                                          break;
+                                        case 'Poison':
+                                          buttonColor = AppColors.Poison;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.poisonBotao();
+                                          break;
+                                        case 'Flying':
+                                          buttonColor = AppColors.Flying;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.flyingBotao();
+                                          break;
+                                        case 'Ice':
+                                          buttonColor = AppColors.Ice;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.iceBotao();
+                                          break;
+                                        case 'Psychic':
+                                          buttonColor = AppColors.Psychic;
+                                          botaoimagem =
+                                              ImageBotaoWidgets.psychicBotao();
+                                          break;
+                                        default:
+                                          buttonColor = Colors.grey;
+                                          break;
+                                      }
+                                      return ElevatedButton(
+                                        style: ButtonStyle(
+                                          alignment: Alignment.topLeft,
+                                          padding: MaterialStateProperty.all(
+                                            const EdgeInsets.fromLTRB(
+                                                20, 7, 60, 7),
+                                          ),
+                                          backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  buttonColor),
+                                          minimumSize:
+                                              MaterialStateProperty.all(
+                                                  const Size(50, 30)),
+                                        ),
+                                        onPressed: () {},
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            botaoimagem,
+                                            const SizedBox(width: 15),
+                                            Flexible(
+                                              child: Text(
+                                                bulbasaur['weaknesses'][index]
+                                                    .toString(),
+                                                overflow: TextOverflow.ellipsis,
+                                                style: const TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 12),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),

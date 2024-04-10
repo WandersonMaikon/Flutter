@@ -60,7 +60,6 @@ class ImageBotaoWidgets {
   static Image fireBotao() {
     return Image.asset(AppBotao.botaofire, width: 20, height: 20);
   }
-
   static Image flyingBotao() {
     return Image.asset(AppBotao.botaoflying, width: 20, height: 20);
   }
@@ -75,5 +74,11 @@ class ImageBotaoWidgets {
 
   static Image waterBotao() {
     return Image.asset(AppBotao.botaowater, width: 20, height: 20);
+  }
+  static Image psychicBotao() {
+    return Image.asset(AppBotao.botaopsychic, width: 20, height: 20);
+  }
+  static Image iceBotao() {
+    return Image.asset(AppBotao.botaoice, width: 20, height: 20);
   }
 }
