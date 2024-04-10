@@ -7,17 +7,19 @@ class PokemonService {
       Uri.parse(
           'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json'),
     );
-    if (response.statusCode == 200) {
-      var json = jsonDecode(response.body);
-      List<dynamic> pokemons = json['pokemon'];
-      if (pokemons.length > limit) {
-        return pokemons.sublist(0, limit);
-      } else {
-        return pokemons;
-      }
-    } else {
+
+    if (response.statusCode != 200) {
       throw Exception('Falha ao carregar lista de pokemons');
     }
+
+    var json = jsonDecode(response.body);
+    List<dynamic> pokemons = json['pokemon'];
+
+    if (pokemons.length > limit) {
+      pokemons = pokemons.sublist(0, limit);
+    }
+
+    return pokemons;
   }
 }
 

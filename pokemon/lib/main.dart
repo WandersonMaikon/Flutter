@@ -10,10 +10,12 @@ class Principal extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          textTheme: const TextTheme(
-              bodyMedium: TextStyle(
-        fontFamily: 'poppins',
-      ))),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(
+            fontFamily: 'poppins',
+          ),
+        ),
+      ),
       routes: AppRoutes.define(),
       initialRoute: '/inicio',
     );

@@ -7,11 +7,38 @@ class ImageFundoWidgets {
   }
 
   static Image fireFundo() {
-    return Image.asset(AppFundo.greenIncolor, width: 120, height: 125);
+    return Image.asset(AppFundo.fireIncolor, width: 120, height: 125);
   }
 
   static Image waterFundo() {
-    return Image.asset(AppFundo.greenIncolor, width: 120, height: 125);
+    return Image.asset(AppFundo.waterIncolor, width: 120, height: 125);
+  }
+
+  static Image get(String color) {
+    List images = [
+      {
+        "key": "Grass",
+        "image": grassFundo(),
+      },
+      {
+        "key": "Fire",
+        "image": fireFundo(),
+      },
+      {
+        "key": "Fire",
+        "image": fireFundo(),
+      },
+      {
+        "key": "Water",
+        "image": waterFundo(),
+      },
+    ];
+
+    try {
+      return images.firstWhere((e) => e['key'] == color)['image'];
+    } catch (e) {
+      return waterFundo();
+    }
   }
 }
 

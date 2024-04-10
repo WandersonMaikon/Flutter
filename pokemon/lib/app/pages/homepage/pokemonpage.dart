@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/app/helpers/utils.dart';
 import '../../model/pokemon.dart';
 import '../../constants/theme_constants.dart';
 import '../../widgets/custom_widget.dart';
@@ -59,30 +60,16 @@ class _PokemonListPageState extends State<PokemonListPage> {
                     var tipoCor;
                     var color;
                     var botaoimagem;
-                    if (pokemon['type'].contains('Grass')) {
-                      color = AppColors.ColorGrass;
-                      ImagemFundo = ImageFundoWidgets.grassFundo();
-                    } else if (pokemon['type'].contains('Fire')) {
-                      color = AppColors.ColorFire;
-                      ImagemFundo = ImageFundoWidgets.fireFundo();
-                    } else if (pokemon['type'].contains('Water')) {
-                      color = AppColors.ColorWater;
-                      ImagemFundo = ImageFundoWidgets.waterFundo();
-                    }
+                    var (selectedColor, selectedBg) =
+                        Utils.WidgetProps(pokemon['type'][0]);
+                    color = selectedColor;
+                    ImagemFundo = selectedBg;
+                    tipoCor = AppColors.getButtonColor(pokemon['type'][0]);
 
-                    if (pokemon['type'].contains('Grass')) {
-                      tipoCor = AppColors.Grass;
-                    } else if (pokemon['type'].contains('Fire')) {
-                      tipoCor = AppColors.Fire;
-                    } else if (pokemon['type'].contains('Water')) {
-                      tipoCor = AppColors.Water;
-                    } else if (pokemon['type'].contains('Flying')) {
-                      tipoCor = AppColors.Flying;
-                    }
-                    if (pokemon['type'].contains('Grass')) {
-                    } else if (pokemon['type'].contains('Fire')) {
-                    } else if (pokemon['type'].contains('Water')) {
-                    } else if (pokemon['type'].contains('Poison')) {}
+                    // if (pokemon['type'].contains('Grass')) {
+                    // } else if (pokemon['type'].contains('Fire')) {
+                    // } else if (pokemon['type'].contains('Water')) {
+                    // } else if (pokemon['type'].contains('Poison')) {}
 
                     return ListBody(
                       children: [
