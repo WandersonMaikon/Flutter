@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import '../../model/pokemon.dart';
 import '../../constants/theme_constants.dart';
 import '../../widgets/custom_widget.dart';
-import 'package:iconify_flutter/iconify_flutter.dart'; // For Iconify Widget
-import 'package:iconify_flutter/icons/zondicons.dart'; // for Non Colorful Icons
-import 'package:colorful_iconify_flutter/icons/emojione.dart'; // for Colorful Icons
+import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:colorful_iconify_flutter/icons/emojione.dart';
 
 class Bulbasaur extends StatefulWidget {
   const Bulbasaur({super.key});
@@ -23,8 +22,11 @@ class _BulbasaurState extends State<Bulbasaur> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xff63BC5A),
+        toolbarHeight: 20.0,
+      ),
       body: Stack(
         children: [
           FutureBuilder<List<dynamic>>(
@@ -43,7 +45,7 @@ class _BulbasaurState extends State<Bulbasaur> {
                     return Stack(
                       children: [
                         Positioned(
-                          top: -150,
+                          top: -190,
                           left: -20,
                           right: -20,
                           child: Container(
@@ -54,7 +56,7 @@ class _BulbasaurState extends State<Bulbasaur> {
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.fromLTRB(110, 50, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(110, 0, 0, 0),
                           child: const Image(
                             image: AssetImage(
                               'assets/images/sprits/green_incolor.png',
@@ -63,13 +65,13 @@ class _BulbasaurState extends State<Bulbasaur> {
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.only(top: 160),
+                          padding: const EdgeInsets.only(top: 100),
                           child: const Image(
                             image: AssetImage('assets/gifs/bulbasaur.gif'),
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.fromLTRB(20, 370, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(20, 310, 0, 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
