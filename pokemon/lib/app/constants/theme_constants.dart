@@ -12,7 +12,12 @@ class AppColors {
   static const Color Flying = Color(0xff89AAE3);
   static const Color Psychic = Color(0xffFA7179);
   static const Color Ice = Color(0xff73CEC0);
-
+  static const Color Eletric = Color(0xffF4D23C);
+  static const Color Fairy = Color(0xffEC8FE6);
+  static const Color Ghost = Color(0xff5269AD);
+  static const Color Bug = Color(0xff91C12F);
+  static const Color Fighting = Color(0xffCE416B);
+  static const Color Normal = Color(0xff919AA2);
   static Color getButtonColor(String color) {
     List colors = [
       {

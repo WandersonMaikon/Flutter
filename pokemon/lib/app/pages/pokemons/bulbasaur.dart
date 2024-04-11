@@ -314,8 +314,8 @@ class _BulbasaurState extends State<Bulbasaur> {
                                 ),
                               ),
                               Wrap(
-                                spacing: 8.0,
-                                runSpacing: 0.0,
+                                spacing: 40.0,
+                                runSpacing: 15.0,
                                 children: <Widget>[
                                   ...List<Widget>.generate(
                                     bulbasaur['weaknesses'].length,
@@ -362,45 +362,95 @@ class _BulbasaurState extends State<Bulbasaur> {
                                           buttonColor = Colors.grey;
                                           break;
                                       }
-                                      return ElevatedButton(
-                                        style: ButtonStyle(
-                                          alignment: Alignment.topLeft,
-                                          padding: MaterialStateProperty.all(
-                                            const EdgeInsets.fromLTRB(
-                                                20, 7, 60, 7),
-                                          ),
-                                          backgroundColor:
-                                              MaterialStateProperty.all<Color>(
-                                                  buttonColor),
-                                          minimumSize:
-                                              MaterialStateProperty.all(
-                                                  const Size(50, 30)),
-                                        ),
-                                        onPressed: () {},
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            botaoimagem,
-                                            const SizedBox(width: 15),
-                                            Flexible(
-                                              child: Text(
-                                                bulbasaur['weaknesses'][index]
-                                                    .toString(),
-                                                overflow: TextOverflow.ellipsis,
-                                                style: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 12),
-                                              ),
+                                      return SizedBox(
+                                        width: 150, // Define a largura fixa
+                                        height: 35, // Define a altura fixa
+                                        child: ElevatedButton(
+                                          style: ButtonStyle(
+                                            // Ajuste o padding conforme necessário
+                                            padding: MaterialStateProperty.all(
+                                              const EdgeInsets.fromLTRB(
+                                                  0, 7, 40, 7),
                                             ),
-                                          ],
+                                            backgroundColor:
+                                                MaterialStateProperty.all<
+                                                    Color>(buttonColor),
+                                          ),
+                                          onPressed: () {},
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize
+                                                .min, // Pode tentar MainAxisSize.max se precisar
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              botaoimagem,
+                                              const SizedBox(width: 5),
+                                              Flexible(
+                                                child: Text(
+                                                  bulbasaur['weaknesses'][index]
+                                                      .toString(),
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: const TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 12),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       );
                                     },
                                   ),
                                 ],
                               ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                child: const Text(
+                                  'Evoluções',
+                                  style: TextStyle(fontSize: 23),
+                                ),
+                              ),
+                              Container(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 0, 0, 100),
+                                margin: const EdgeInsets.fromLTRB(0, 0, 30, 0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 215, 214, 214),
+                                  ),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          0, 0, 0, 100),
+                                      margin: const EdgeInsets.fromLTRB(
+                                          30, 30, 30, 0),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(50),
+                                        border: Border.all(
+                                          color: const Color.fromARGB(
+                                              255, 215, 214, 214),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            padding: EdgeInsets.fromLTRB(
+                                                0, 0, 40, 0),
+                                            decoration: const BoxDecoration(
+                                              color: (Color(0xff63BC5A)),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
                         ),
