@@ -24,8 +24,8 @@ class _BulbasaurState extends State<Bulbasaur> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff63BC5A),
-        toolbarHeight: 20.0,
+        backgroundColor: const Color(0xff63BC5A),
+        toolbarHeight: 27.0,
       ),
       body: Stack(
         children: [
@@ -53,14 +53,6 @@ class _BulbasaurState extends State<Bulbasaur> {
                             width: 900,
                             child: Image.asset(
                                 'assets/images/fundoperfil/bulbasaur.png'),
-                          ),
-                        ),
-                        Container(
-                          child: IconButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            icon: Icon(Icons.arrow_back),
                           ),
                         ),
                         Container(
@@ -186,7 +178,7 @@ class _BulbasaurState extends State<Bulbasaur> {
                                   children: [
                                     const Row(
                                       children: [
-                                        Iconify(Emojione.weight_outline),
+                                        Iconify(Emojione.bell_bold),
                                         Text('Peso'),
                                         SizedBox(width: 120),
                                         Iconify(Emojione.height_outlined),
@@ -405,7 +397,7 @@ class _BulbasaurState extends State<Bulbasaur> {
                                 ],
                               ),
                               Container(
-                                padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                                 child: const Text(
                                   'Evoluções',
                                   style: TextStyle(fontSize: 23),
@@ -436,15 +428,12 @@ class _BulbasaurState extends State<Bulbasaur> {
                                               255, 215, 214, 214),
                                         ),
                                       ),
-                                      child: Row(
+                                      child: Stack(
                                         children: [
-                                          Container(
-                                            padding: EdgeInsets.fromLTRB(
-                                                0, 0, 40, 0),
-                                            decoration: const BoxDecoration(
-                                              color: (Color(0xff63BC5A)),
-                                            ),
-                                          )
+                                          Image(
+                                            image: AssetImage(
+                                                'assets/images/sprits_evolution/bulbasaur_1.png'),
+                                          ),
                                         ],
                                       ),
                                     ),
