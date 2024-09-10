@@ -5,6 +5,7 @@ import '../pages/inicio.dart';
 import '../pages/login.dart';
 import '../pages/homepage/pokemonpage.dart';
 import '../pages/pokemons/bulbasaur.dart';
+import '../pages/pokemons/ivysaur.dart';
 
 class AppRoutes {
   static Map<String, WidgetBuilder> define() {
@@ -15,6 +16,7 @@ class AppRoutes {
       '/login': (context) => Login(),
       '/pokemon': (context) => const PokemonListPage(),
       '/bulbasaur': (context) => const Bulbasaur(),
+      '/ivysaur': (context) => const Ivysaur(),
     };
   }
 }

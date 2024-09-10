@@ -49,3 +49,30 @@ class BulbasaurService {
     }
   }
 }
+
+class IvysaurService {
+  Future<List<dynamic>> fetchIvysaur() async {
+    final response = await http.get(
+      Uri.parse(
+          'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json'),
+    );
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body);
+      List<dynamic> pokemonList = data['pokemon'];
+      return pokemonList;
+    } else {
+      throw Exception('Falha ao carregar pokemon');
+    }
+  }
+
+  Future<List<dynamic>> fetchIvysaurData() async {
+    try {
+      List<dynamic> data = await fetchIvysaur();
+      var bulbasaur = data.where((item) => item['num'] == '002').toList();
+      return bulbasaur;
+    } catch (error) {
+      print("Erro ao processar os dados: $error");
+      return [];
+    }
+  }
+}

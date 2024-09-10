@@ -77,8 +77,10 @@ class _PokemonListPageState extends State<PokemonListPage> {
                           children: [
                             InkWell(
                               onTap: () {
-                                if (pokemon['name'] == 'Bulbasaur') {
+                                if (pokemon['id'] == 1) {
                                   Navigator.pushNamed(context, '/bulbasaur');
+                                } else if (pokemon['id'] == 2) {
+                                  Navigator.pushNamed(context, '/ivysaur');
                                 }
                               },
                               child: Card(
